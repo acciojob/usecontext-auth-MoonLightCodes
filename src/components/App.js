@@ -1,5 +1,5 @@
 
-import React,{ useContext } from 'react';
+import React from 'react';
 import './../styles/App.css';
 import { useAuth } from "../AuthenticationContext";
 
@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div>
         <h1>Click on the checkbox to get autenticated</h1>
-        <p>{isAuthed?"you are not authenticated":"you are now authenticated, you can proceed"}</p>
+        <p>{!isAuthed?"you are not authenticated":"you are now authenticated, you can proceed"}</p>
         <input type="checkbox" id="check" onChange={()=>setIsAuthed(pr=>!pr)}/> <label htmlFor="check">I'm not robot</label>
     </div>
   )
