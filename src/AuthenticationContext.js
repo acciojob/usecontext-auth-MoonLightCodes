@@ -1,15 +1,17 @@
 import React, { createContext, useContext, useState } from "react";
 
-const ConProvider = createContext();
-export const useAuth = ()=>useContext(ConProvider);
+const AuthContext = createContext();
+export const useAuth = ()=>useContext(AuthContext);
 
 const ContextApi = ({ children }) => {
   const [isAuthed, setIsAuthed] = useState(false);
   return (
-    <ConProvider.Provider value={{ isAuthed, setIsAuthed }}>
+    <AuthContext.Provider value={{ isAuthed, setIsAuthed }}>
       {children}
-    </ConProvider.Provider>
+    </AuthContext.Provider>
   );
 };
+
+
 
 export default ContextApi;
